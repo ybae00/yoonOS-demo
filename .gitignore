@@ -26,3 +26,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# root-level vercel artifacts
+/package.json
+/package-lock.json
