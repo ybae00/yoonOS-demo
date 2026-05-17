@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --accent-color: #85BDC7;
+  --accent-rgb: 133, 189, 199;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes windowOpen {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes windowClose {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.92); }
+}
+
+@keyframes nodeEnter {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-window-open {
+  animation: windowOpen 150ms ease-out forwards;
+}
+
+.animate-node-enter {
+  animation: nodeEnter 200ms ease-out forwards;
+}
+
+/* Global accent overrides for existing black-based interaction styles */
+.bg-black {
+  background-color: var(--accent-color) !important;
+}
+
+.bg-black\/80 {
+  background-color: rgba(var(--accent-rgb), 0.8) !important;
+}
+
+.bg-black\/70 {
+  background-color: rgba(var(--accent-rgb), 0.7) !important;
+}
+
+.bg-black\/50 {
+  background-color: rgba(var(--accent-rgb), 0.5) !important;
+}
+
+.bg-black\/30 {
+  background-color: rgba(var(--accent-rgb), 0.3) !important;
+}
+
+.bg-black\/10 {
+  background-color: rgba(var(--accent-rgb), 0.1) !important;
+}
+
+.bg-black\/5 {
+  background-color: rgba(var(--accent-rgb), 0.05) !important;
+}
+
+.bg-black\/\[0\.03\] {
+  background-color: rgba(var(--accent-rgb), 0.03) !important;
+}
+
+.bg-black\/\[0\.07\] {
+  background-color: rgba(var(--accent-rgb), 0.07) !important;
+}
+
+.hover\:bg-black:hover {
+  background-color: var(--accent-color) !important;
+}
+
+.hover\:bg-black\/80:hover {
+  background-color: rgba(var(--accent-rgb), 0.8) !important;
+}
+
+.hover\:bg-black\/70:hover {
+  background-color: rgba(var(--accent-rgb), 0.7) !important;
+}
+
+.hover\:bg-black\/50:hover {
+  background-color: rgba(var(--accent-rgb), 0.5) !important;
+}
+
+.hover\:bg-black\/5:hover {
+  background-color: rgba(var(--accent-rgb), 0.05) !important;
+}
+
+.hover\:bg-black\/\[0\.07\]:hover {
+  background-color: rgba(var(--accent-rgb), 0.07) !important;
+}
+
+.ring-black,
+.focus\:ring-black:focus {
+  --tw-ring-color: var(--accent-color) !important;
+}
+
+.border-black,
+.focus\:border-black:focus,
+.hover\:border-black:hover {
+  border-color: var(--accent-color) !important;
+}

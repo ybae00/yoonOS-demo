@@ -1,0 +1,66 @@
+{
+  "name": "yoonos",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "next dev",
+    "dev:electron": "npm run build:electron && concurrently \"next dev\" \"wait-on http://localhost:3000 && electron .\"",
+    "build": "next build",
+    "build:electron": "tsc -p electron/tsconfig.json",
+    "build:all": "npm run build && npm run build:electron",
+    "start": "next start",
+    "start:electron": "npm run build:all && electron .",
+    "lint": "next lint",
+    "test": "jest",
+    "pack": "npm run build:all && electron-builder --dir",
+    "dist": "npm run build:all && electron-builder"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.95.1",
+    "@supabase/ssr": "^0.10.3",
+    "@supabase/supabase-js": "^2.105.4",
+    "lucide-react": "^1.14.0",
+    "next": "14.2.35",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-draggable": "^4.5.0",
+    "react-force-graph-2d": "^1.29.1",
+    "react-force-graph-3d": "^1.29.1",
+    "reactflow": "^11.11.4",
+    "three": "^0.184.0",
+    "zustand": "^5.0.13"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.4.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/three": "^0.184.1",
+    "concurrently": "^9.2.1",
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.35",
+    "jest": "^30.4.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "ts-jest": "^29.4.9",
+    "typescript": "^5",
+    "wait-on": "^8.0.5"
+  },
+  "build": {
+    "appId": "com.yoonos.desktop",
+    "productName": "YoonOS",
+    "files": [
+      "dist-electron/**/*",
+      "out/**/*",
+      "public/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg"
+    }
+  }
+}
